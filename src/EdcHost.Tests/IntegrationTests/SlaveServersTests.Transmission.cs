@@ -39,6 +39,7 @@ public partial class SlaveServersTests
         int strength = 4;
         int emeraldCount = 5;
         int woolCount = 6;
+        List<int> owningOreKindOfChunks = Enumerable.Range(0, 64).ToList();
 
         PacketFromHost packet = new(
             gameStage, elapsedTime,
@@ -47,7 +48,9 @@ public partial class SlaveServersTests
             (float)positionX, (float)positionY,
             (float)positionOpponentX, (float)positionOpponentY,
             agility, health, maxHealth, strength,
-            emeraldCount, woolCount);
+            emeraldCount, woolCount,
+            owningOreKindOfChunks
+        );
 
         byte[] bytes = packet.ToBytes();
 
@@ -58,7 +61,9 @@ public partial class SlaveServersTests
             hasBed, hasBedOpponent,
             positionX, positionY, positionOpponentX, positionOpponentY,
             agility, health, maxHealth, strength,
-            emeraldCount, woolCount);
+            emeraldCount, woolCount,
+            owningOreKindOfChunks
+        );
 
         byte[] bytesToSend = serialPort.WriteBuffer.ToArray();
 
