@@ -24,6 +24,7 @@ public class PacketFromHostTests
         int exp_emeraldCount = 64;
         int exp_woolcount = 64;
         List<int> exp_owningOreKindOfChunks = Enumerable.Repeat(0, 64).ToList();
+        List<int> exp_informationOfChunks = Enumerable.Repeat(0, 64).ToList();
         PacketFromHost packetFromHost = new(
             exp_gameStage, exp_elapsedTime, exp_heightOfChunks, exp_hasBed, exp_hasBedOpponent,
             exp_positionX, exp_positionY, exp_positionOpponentX, exp_positionOpponentY, exp_agility,
@@ -31,7 +32,7 @@ public class PacketFromHostTests
             exp_owningOreKindOfChunks);
         Assert.Equal(exp_gameStage, packetFromHost.GameStage);
         Assert.Equal(exp_elapsedTime, packetFromHost.ElapsedTime);
-        Assert.Equal(exp_heightOfChunks, packetFromHost.HeightOfChunks);
+        Assert.Equal(exp_informationOfChunks, packetFromHost.InformationOfChunks);
         Assert.Equal(exp_hasBed, packetFromHost.HasBed);
         Assert.Equal(exp_hasBedOpponent, packetFromHost.HasBedOpponent);
         Assert.Equal(exp_positionX, packetFromHost.PositionX);
@@ -67,6 +68,7 @@ public class PacketFromHostTests
         int exp_emeraldCount = 64;
         int exp_woolcount = 64;
         List<int> exp_owningOreKindOfChunks = Enumerable.Repeat(0, 64).ToList();
+        List<int> exp_informationOfChunks = Enumerable.Repeat(0, 64).ToList();
         PacketFromHost exp_Packet = new(
             exp_gameStage, exp_elapsedTime,
             exp_heightOfChunks, exp_hasBed, exp_hasBedOpponent,
@@ -78,10 +80,10 @@ public class PacketFromHostTests
         PacketFromHost actualPacket = new(data);
         Assert.Equal(exp_Packet.GameStage, actualPacket.GameStage);
         Assert.Equal(exp_Packet.ElapsedTime, actualPacket.ElapsedTime);
-        Assert.Equal(exp_Packet.HeightOfChunks.Count, actualPacket.HeightOfChunks.Count);
-        for (int i = 0; i < exp_Packet.HeightOfChunks.Count; i++)
+        Assert.Equal(exp_Packet.InformationOfChunks.Count, actualPacket.InformationOfChunks.Count);
+        for (int i = 0; i < exp_Packet.InformationOfChunks.Count; i++)
         {
-            Assert.Equal(exp_Packet.HeightOfChunks[i], actualPacket.HeightOfChunks[i]);
+            Assert.Equal(exp_Packet.InformationOfChunks[i], actualPacket.InformationOfChunks[i]);
         }
 
         Assert.Equal(exp_Packet.HasBed, actualPacket.HasBed);
