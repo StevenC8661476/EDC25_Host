@@ -17,4 +17,5 @@ public interface IPacketFromHost : IPacket
     public int Strength { get; }
     public int EmeraldCount { get; }
     public int WoolCount { get; }
+    public List<int> OwningOreKindOfChunks { get; }
 }

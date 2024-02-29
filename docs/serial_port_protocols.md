@@ -67,3 +67,14 @@ The item IDs are defined as belows:
 | strength                     | integer        | The strength point.                                        | -     | format (`int8`)  | -                                         |
 | emeraldCount                 | integer        | The emerald count.                                         | -     | format (`int8`)  | -                                         |
 | woolCount                    | integer        | The wool count.                                            | -     | format (`int8`)  | -                                         |
+| owningOreKindOfChunks               | array<integer> | -                                                          | -     | 64 items         | -                                         |
+| owningOreKindOfChunks (single item) | integer        | The height of chunks.                                      | -     | format (`int8`)  | -                                         |
+
+The ore kinds are defined as belows:
+
+| ID | OreKind |
+|---|---|
+| 0 | IronIngot |
+| 1 | GoldIngot |
+| 2 | Diamond |
+| 3 | None |
